@@ -1,0 +1,143 @@
+*{
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+html{
+  width: 100%;
+  height: 100%;
+}
+body{
+  height: 60vh;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: column;
+  font-family: sans-serif;
+}
+ol{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+li{
+  margin: auto;
+  margin-top: 50px;
+}
+.form-1{
+  width: 330px;
+  height: 50px;
+  position: relative;
+  overflow: hidden;
+}
+.form-1 input{
+  width: 100%;
+  height: 100%;
+  color: #595f6e;
+  padding-top: 20px;
+  padding-left: 5px;
+  border: none;
+  outline: none;
+}
+.form-1 label{
+  position: absolute;
+  bottom: 0;
+  left: 0; 
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  border-bottom: 1px solid #000;
+}
+.form-1 label::after {
+  content: '';
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-bottom: 3px solid #5fa8d3;
+  transform: translate(-100%,0);
+  transition: all .3s ease;
+}
+.content-name-1{
+  position: absolute;
+  bottom: 5px;
+  left: 0;
+  transition: all .3s ease;
+}
+.form-1 input:focus + .label-name-1 .content-name-1,
+.form-1 input:valid + .label-name-1 .content-name-1{
+  transform: translate(0,-150%);
+  font-size: 14px;
+  color: #5fa8d3;
+}
+.form-1 input:focus + label:after,
+.form-1 input:valid + label:after{
+  transform: translate(0%,0);
+}
+
+/* стили для 2-ой формы */
+
+*::selection{
+  color: #fff;
+  background: #01d3b9; 
+}
+.form-2{
+  width: 330px;
+  height: 60px;
+  position: relative;
+}
+.form-2 input{
+  width: 100%;
+  height: 100%;
+  color: #626365;
+  border: 1px solid #E2E2E2;
+  border-radius: 5px;
+  padding-left: 10px;
+  padding-right: 40px;
+  outline: none;
+  transition: all 0.3s ease;
+}
+.form-2 label{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+.content-name-2{
+  position: absolute;
+  top: 50%;
+  left: 10px;
+  transform: translate(0,-50%);
+  transition: all 0.3s;
+  color: #505050;
+}
+.label__img{
+  position: absolute;
+  top: 50%;
+  right: 20px;
+  transform: translate(0,-50%);
+  transition: all 0.3s;
+  opacity: 0;
+}
+.form-2 input:hover{
+  border-color: #7C7C7C;
+}
+.form-2 input:focus,
+.form-2 input:valid{
+  border: 2px solid #01d3b9;
+}
+.form-2 input:focus + label .content-name-2,
+.form-2 input:valid + label .content-name-2{
+  transform: translate(0,-260%);
+  font-size: 12px;
+  padding: 0 5px;
+  background-color: #fff;
+  color: #01d3b9;
+}
+.form-2 input:valid ~ .label__img{
+  opacity: 1;
+}
